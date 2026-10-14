@@ -5,6 +5,8 @@ public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
+
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
 
