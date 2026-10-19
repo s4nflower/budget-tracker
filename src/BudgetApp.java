@@ -23,6 +23,9 @@ public class BudgetApp {
         Collections.sort(categories, Collections.reverseOrder());
         System.out.println(categories);
         System.out.println(budgetDifference(categories));
+
+        double average = budgetDifference(categories) / categories.size();
+        System.out.println("Average over/under: " + String.format("$%.2f", average));
     }
 
     /**
@@ -37,7 +40,7 @@ public class BudgetApp {
      * @param categories the budget categories with the spend
      * @return the total amount over/under budget
      */
-    
+
     public static double budgetDifference(List<BudgetCategory> categories) {
         double total = 0;
         for (BudgetCategory c : categories) {
