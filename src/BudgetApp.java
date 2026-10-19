@@ -4,30 +4,21 @@ import java.util.Scanner;
 
 public class BudgetApp {
     public static void main(String[] args) {
-        ArrayList<String> budgetCategory = new ArrayList<>();
+        ArrayList<BudgetCategory> categories = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         
-       // BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
-
         BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
-        System.out.println(groceries.getName() + " " + groceries.getLimit() + " " + groceries.getSpent());
-        System.out.println(groceries);
+        //System.out.println(groceries.getName() + " " + groceries.getLimit() + " " + groceries.getSpent());
+        //System.out.println(groceries);
 
-        // while(scan.hasNextLine()) {
-        //     budgetCategory.add(BudgetCategory.getName);
-        //     String category = scan.nextLine();
-
-        //     double limit = scan.nextDouble();
-        //     double spent = scan.nextDouble();
-
-        //     // Consume \n after spent input 
-        //     if(scan.hasNextLine()) scan.nextLine();
-
-        //     String limitString = String.format("$%.2f", limit);
-        //     String spentString = String.format("$%.2f", spent);
-        //     // System.out.println("The budget limit for " + category + " was: " + limitString + 
-        //     //                  " but the actual spend was " + spentString);
-        // }
+        while (scan.hasNextLine()) {
+            String category = scan.nextLine();
+            double limit = scan.nextDouble();
+            double spent = scan.nextDouble();
+            if (scan.hasNextLine()) scan.nextLine();
+            categories.add(new BudgetCategory(category, limit, spent));
+            }
+        System.out.println(categories);
     }
 
     /**
